@@ -11,7 +11,7 @@ Chirp.destroy_all
 Like.destroy_all
 
 #Instructors 
-ryan = User.create!(username: "will_climb_rocks", age: 11, political_affiliation: "JavaScript", email: "boulderz@aa.io")
+ryan = User.create!(username: "will_climb_rocks", age: 11, political_affiliation: "JavaScript", email: "arms@aa.io")
 charlos = User.create!(username: "charlos_gets_buckets", age: 11, political_affiliation: "JavaScript", email: "ballin@aa.io")
 lina = User.create!(username: "lina_2020", age: 11, political_affiliation: "Ruby", email: "good_speeches@aa.io")
 erik = User.create!(username: "hawaiian_shirts_ftw", age: 11, political_affiliation: "JavaScript", email:"valhalla@aa.io")
