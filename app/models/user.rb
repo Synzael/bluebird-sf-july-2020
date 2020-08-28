@@ -29,7 +29,37 @@ class User < ApplicationRecord
         through: :likes,
         source: :chirp
 
-    # has_many :banana,
-    #     through: :liked_chirps,
-    #     source: :author
+    # User.first #grabs the first isntance of user in our database by id
+    # User.last #grab the last user by id
+
+    # #find will error out if it doesnt finds what you need 
+    # #find_by will not error out but actually return nil if it doesnt find what you need
+
+    # User.find(???) # takes in an id, and is going to return a user by that id
+    # #key is the column in the table 
+    # #value is what you are looking for
+    # User.find_by(key: :value) #search the database for a model that has a key value pair that we passed in 
+
+    # # ! where 
+
+    # User.where(age: 10..20)
+    # User.where.not("age <= 11")
+    # User.where.not("age <= ?", "11")
+
+    # instructors = ["give_me_wine", "lina_2020", "wakka_wakka"]
+    # User.where(username: instructors).order(:username) 
+    # User.where(username: instructors).order(username: :desc)
+
+    # User.where("username in (?) ", instructors).order(:username)
+
+    # # ! joins
+
+    # #find all the chirps for the user with the username "charlos_gets_buckets" ???
+    # # * jeopardy music*
+    # #steps:
+    # #1. find the instance we're looking for 
+    # # this works 
+    # User.find_by(username: "charlos_gets_buckets").chirps
+    # #lets do it with one query though...
+    # User.select("chirps.*").joins(:chirps).where(username: "charlos_gets_buckets")
 end
