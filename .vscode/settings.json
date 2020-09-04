@@ -1,0 +1,11 @@
+{
+    "npm.exclude": "",
+    "emmet.includeLanguages": {
+        "html.erb": "html",
+        "html": "erb",
+        "erb": "html",
+        "jsx": "html",
+        "jsx": "js"
+    }
+}
+

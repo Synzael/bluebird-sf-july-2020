@@ -1,0 +1,26 @@
+
+<h1>Create a hooman</h1>
+
+<!--<form action="<%#= users_url %>" method="POST">
+    <label for="username">Username:
+        <input type="text" name="user[username]" value="<%#= @user.username %>">
+    </label>
+    <br>
+    <label for="email">Email:
+        <input type="text" name="user[email]" value="<%#= @user.email %>">
+    </label>
+    <br>
+    <label for="age">Age:
+        <input type="text" name="user[age]" value="<%#= @user.age %>">
+    </label>
+    <br>
+    <label for="political_affiliation">Political Affiliation:
+        <input type="text" name="user[political_affiliation]" value="<%#= @user.political_affiliation %>">
+    </label>
+    <br>
+    <input type="submit" value="Create human">
+
+
+</form>-->
+
+<%= render "form", {user: @user, type: :new} %>

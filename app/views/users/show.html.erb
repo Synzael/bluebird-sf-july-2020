@@ -1,0 +1,26 @@
+<h1>This is the users show page</h1>
+<!-- <ul>
+    <li><%#= @user.username %></li>
+    <li><%#= @user.age %></li>
+    <li><%#= @user.email %></li>
+    <li><%#= @user.political_affiliation %></li>
+</ul> -->
+
+<%= render "user", {banana: @user, action: :show} %>
+
+<li>
+    <form action="<%= user_url(@user) %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE" >
+        <input type="submit" value="DESTROY IT!!!!">
+    </form>
+</li>
+
+<!--"user": file name (_user.hrml.erb)-->
+<!--banana: key  -->
+<!-- @user: variable saved in that key to be used in your partial-->
+
+
+<%#=  %> <!-- -> pe -->
+<%#  %> <!-- -> er -->
+
+

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # resources :users # makes all the restful routes
   # resources :users, except: [:new,:edit] # makes all routes except the routes in the array
-  resources :users, only: [:index,:show,:create,:update,:destroy] do # make only the routes in the array
+  resources :users do # make only the routes in the array
     resources :chirps, only: [:index]
   end
 

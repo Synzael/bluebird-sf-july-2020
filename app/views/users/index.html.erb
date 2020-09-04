@@ -1,0 +1,16 @@
+<h1>Here are all of our hoomans!</h1>
+<a href="<%= new_user_url %>">Create new user</a>
+
+<ul>
+
+    <% @users.each do |user| %>
+    <!-- you will NOT see it!-->
+       <!-- <li><%= user.username %></li>
+         you will see it!
+        <li><%= user.age %></li>
+        <li><%= user.email %></li>
+        <li><%= user.political_affiliation %></li>-->
+        <%= render "user", banana: user, action: :index %>
+        <br>
+    <% end %>
+</ul>

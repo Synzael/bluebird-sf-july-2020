@@ -1,0 +1,15 @@
+<% if action == :show %>
+    <li><a href="<%=users_url%>">All the hoomans!</a></li>
+<% else %>
+    <li><a href="<%= edit_user_url(banana) %>">Edit hooman</a></li>
+    <li><a href="<%= user_url(banana) %>">User show page</a></li>
+    <!--ID passed in implicitely-->
+<% end %>
+<ul>
+    <li><%= banana.username %></li>
+    <!-- you will see it!-->
+    <li><%= banana.age %></li>
+    <li><%= banana.email %></li>
+    <li><%= banana.political_affiliation %></li>
+</ul>
+
