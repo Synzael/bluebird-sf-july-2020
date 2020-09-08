@@ -22,6 +22,13 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     # before_validation :ensure_session_token # does the same thing as above for our purposes
 
+    # SPIRE:
+    # self.find_by_credentials
+    # password=
+    # is_password?
+    # resest_session_token!
+    # ensure_session_token
+
     def password=(password) # gets run automatically during User.new
         self.password_digest = BCrypt::Password.create(password) # sets password_digest to hashed value
         @password = password

@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
     skip_before_action :verify_authenticity_token
     helper_method :current_user, :logged_in?
 
+    # CRLLL:
+    # current_user
+    # require_logged_in
+    # login!
+    # logout!
+    # logged_in?
+
     def require_logged_in
         redirect_to new_session_url unless logged_in?
     end
