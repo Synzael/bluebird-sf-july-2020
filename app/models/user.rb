@@ -16,7 +16,7 @@ class User < ApplicationRecord
     validates :username, :email, :session_token, presence: true, uniqueness: true
     # validates(:username, :email, {presence: true, uniqueness: true})
     validates :political_affiliation, :password_digest, :age, presence: true
-    validates :password, length: {minimum: 6} # calls getter for self.password, so we need getter
+    validates :password, length: {minimum: 6}, allow_nil: true # calls getter for self.password, so we need getter
 
     attr_reader :password
     after_initialize :ensure_session_token
@@ -29,6 +29,25 @@ class User < ApplicationRecord
 
     def ensure_session_token
         self.session_token ||= SecureRandom::urlsafe_base64 # generates random string and sets session_token
+    end
+
+    def self.find_by_credentials(username,password)
+        user = User.find_by(username: username)
+        if user && user.is_password?(password)
+            user
+        else
+            nil
+        end
+    end
+
+    def is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password) # this is_password? is the BCrypt method
+    end
+
+    def reset_session_token!
+        self.session_token = SecureRandom::urlsafe_base64
+        self.save! # password is always nil when we save! because there is no password col
+        self.session_token
     end
 
     has_many :chirps,

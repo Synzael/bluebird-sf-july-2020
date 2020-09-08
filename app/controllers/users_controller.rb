@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :require_logged_in, only: [:index,:show,:edit,:update,:delete]
+
     def new 
         @user = User.new
         render :new
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         # creates user instance not in DB
         if @user.save
+            # Eventually we will want to log in the user when we create them
             # render json: user
             # redirect_to "/users/#{user.id}" # redirects to show action
             redirect_to user_url(@user)
@@ -68,6 +71,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:age,:username,:email,:political_affiliation)
+        params.require(:user).permit(:age,:username,:email,:political_affiliation,:password)
     end
 end

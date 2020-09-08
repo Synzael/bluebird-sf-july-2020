@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <h2>Welcome to Bluebird, <%= current_user.username %></h2>
+      <form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Logout">
+      </form>
+    <% else %>
+      <a href="<%= new_user_url %>">Sign up for Bluebird</a>
+      <a href="<%= new_session_url %>">Sign in to Bluebird</a>
+    <% end %>
     <%= yield %>
   </body>
 </html>
