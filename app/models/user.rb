@@ -9,11 +9,27 @@
 #  updated_at            :datetime         not null
 #  political_affiliation :string           not null
 #  age                   :integer          not null
+#  password_digest       :string           not null
+#  session_token         :string           not null
 #
 class User < ApplicationRecord
-    validates :username, :email, presence: true, uniqueness: true
+    validates :username, :email, :session_token, presence: true, uniqueness: true
     # validates(:username, :email, {presence: true, uniqueness: true})
-    validates :political_affiliation, :age, presence: true
+    validates :political_affiliation, :password_digest, :age, presence: true
+    validates :password, length: {minimum: 6} # calls getter for self.password, so we need getter
+
+    attr_reader :password
+    after_initialize :ensure_session_token
+    # before_validation :ensure_session_token # does the same thing as above for our purposes
+
+    def password=(password) # gets run automatically during User.new
+        self.password_digest = BCrypt::Password.create(password) # sets password_digest to hashed value
+        @password = password
+    end
+
+    def ensure_session_token
+        self.session_token ||= SecureRandom::urlsafe_base64 # generates random string and sets session_token
+    end
 
     has_many :chirps,
         primary_key: :id,

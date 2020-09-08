@@ -11,24 +11,24 @@ Chirp.destroy_all
 Like.destroy_all
 
 #Instructors 
-ryan = User.create!(username: "will_climb_rocks", age: 11, political_affiliation: "JavaScript", email: "arms@aa.io")
-charlos = User.create!(username: "charlos_gets_buckets", age: 11, political_affiliation: "JavaScript", email: "ballin@aa.io")
-lina = User.create!(username: "lina_2020", age: 11, political_affiliation: "Ruby", email: "good_speeches@aa.io")
-erik = User.create!(username: "hawaiian_shirts_ftw", age: 11, political_affiliation: "JavaScript", email:"valhalla@aa.io")
-zack = User.create!(username: "music_for_lyfe", age: 11, political_affiliation: "Python", email:"musicmaster@aa.io")
-julia = User.create!(username: "give_me_wine", age: 11, political_affiliation: "JavaScript", email:"might_cry@aa.io")
-elliot = User.create!(username: "all_knowing_elliot", age: 11, political_affiliation: "C", email: "those_are_teef@aa.io")
-dean = User.create!(username: "dean_machine", age: 11, political_affiliation: "Ruby", email: "deans_diary@aa.io")
-angela = User.create!(username: "loves_capy", age: 11, political_affiliation: "JavaScript", email: "chosenone@aa.io")
-alissa = User.create!(username: "cow_luva", age: 11, political_affiliation: "JavaScript" , email: "cows@aa.io")
-joe = User.create!(username: "trader_joes_4lyf3", age: 11, political_affiliation: "Ruby", email: "thetraderjoe@aa.io")
-walker = User.create!(username: "wakka_wakka", age: 11, political_affiliation: "JavaScript", email: "wakka@wakka.walking")
-mike = User.create!(username: "like_mike", age: 11, political_affiliation: "Ruby", email: "mike@aa.io")
-michelle = User.create!(username: "michelle_bell", age: 11, political_affiliation: "JavaScript", email: "michelle@aa.io")
-vanessa = User.create!(username: "the_vanessa", age: 11, political_affiliation: "Ruby", email: "vanessa@aa.io")
-jen = User.create!(username: "jen_ken_intensifies", age: 11, political_affiliation: "JavaScript", email: "jen@aa.io")
+ryan = User.create!(username: "will_climb_rocks", age: 11, political_affiliation: "JavaScript", email: "arms@aa.io", password: 'password')
+charlos = User.create!(username: "charlos_gets_buckets", age: 11, political_affiliation: "JavaScript", email: "ballin@aa.io", password: 'password')
+lina = User.create!(username: "lina_2020", age: 11, political_affiliation: "Ruby", email: "good_speeches@aa.io", password: 'password')
+erik = User.create!(username: "hawaiian_shirts_ftw", age: 11, political_affiliation: "JavaScript", email:"valhalla@aa.io", password: 'password')
+zack = User.create!(username: "music_for_lyfe", age: 11, political_affiliation: "Python", email:"musicmaster@aa.io", password: 'password')
+julia = User.create!(username: "give_me_wine", age: 11, political_affiliation: "JavaScript", email:"might_cry@aa.io", password: 'password')
+elliot = User.create!(username: "all_knowing_elliot", age: 11, political_affiliation: "C", email: "those_are_teef@aa.io", password: 'password')
+dean = User.create!(username: "dean_machine", age: 11, political_affiliation: "Ruby", email: "deans_diary@aa.io", password: 'password')
+angela = User.create!(username: "loves_capy", age: 11, political_affiliation: "JavaScript", email: "chosenone@aa.io", password: 'password')
+alissa = User.create!(username: "cow_luva", age: 11, political_affiliation: "JavaScript" , email: "cows@aa.io", password: 'password')
+joe = User.create!(username: "trader_joes_4lyf3", age: 11, political_affiliation: "Ruby", email: "thetraderjoe@aa.io", password: 'password')
+walker = User.create!(username: "wakka_wakka", age: 11, political_affiliation: "JavaScript", email: "wakka@wakka.walking", password: 'password')
+mike = User.create!(username: "like_mike", age: 11, political_affiliation: "Ruby", email: "mike@aa.io", password: 'password')
+michelle = User.create!(username: "michelle_bell", age: 11, political_affiliation: "JavaScript", email: "michelle@aa.io", password: 'password')
+vanessa = User.create!(username: "the_vanessa", age: 11, political_affiliation: "Ruby", email: "vanessa@aa.io", password: 'password')
+jen = User.create!(username: "jen_ken_intensifies", age: 11, political_affiliation: "JavaScript", email: "jen@aa.io", password: 'password')
   
-big_company = User.create!(username: "instructors_rock", age: 52, political_affiliation: "Instructors", email: "giveus@money.now")
+big_company = User.create!(username: "instructors_rock", age: 52, political_affiliation: "Instructors", email: "giveus@money.now", password: 'password')
 
 
 #chirps
