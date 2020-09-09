@@ -41,10 +41,12 @@ class UsersController < ApplicationController
             # Eventually we will want to log in the user when we create them
             # render json: user
             # redirect_to "/users/#{user.id}" # redirects to show action
+            login!(@user)
             redirect_to user_url(@user)
             # creates another HTTP request 
         else
             # render json: user.errors.full_messages, status: 422 # unprocesable entity
+            flash.now[:errors] = @user.errors.full_messages
             render :new
             # points to view
         end
@@ -61,7 +63,6 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        debugger
         @user = User.find(params[:id])
         @user.destroy
         redirect_to users_url

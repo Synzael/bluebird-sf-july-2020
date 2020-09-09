@@ -12,7 +12,11 @@ class SessionsController < ApplicationController
             login!(@user)
             redirect_to user_url(@user)
         else
-            render :new
+            # flash.now[:errors] = @user.errors.full_messages
+            # cant use errors.full_messages because @user is nil
+            # render :new
+            flash[:errors] = ['Username or password is incorrect, please try again']
+            redirect_to new_session_url
         end
     end
 
